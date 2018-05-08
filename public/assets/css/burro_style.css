@@ -1,9 +1,26 @@
-.jumbotron {
+body {
   background-image: url("/assets/img/burro-en-el-campo.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  margin-top: 10px;
+}
+
+.card {
+  margin: 20px;
+  opacity: .80;
+}
+
+.jumbotron {
+  margin: 20px;
+  opacity: .80;
+  background-image: url("/assets/img/Lipstick-Kiss.png");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.display-4,
+.lead {
+  text-align: center;
 }
 
 li {

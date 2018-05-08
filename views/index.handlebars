@@ -10,7 +10,7 @@
       <input type="text" id="bu" name="name">
     </div>
     <div class="form-group">
-      <label for="devoured">Are you adding an eaten or uneaten burro, here?</label>
+      <label for="devoured">Are you adding an already devoured or uneaten burro, here?</label>
       <br>
       <input type="radio" name="devoured" value="1" checked> Devoured!
       <br>
@@ -33,12 +33,11 @@
           {{#each burros}} {{#unless devoured}}
           <span> {{this.id}} - {{this.burro_name}}</span>
           <button class="change-devoured" data-id="{{this.id}}" data-devoured="{{devoured}}">
-            {{#unless devoured}}EAT TIME!{{else}}Vomit it UP!{{/unless}}
+            {{#unless devoured}}EAT It!{{else}}Vomit it Up!{{/unless}}
           </button>
           <button class="delete-burro" data-id="{{this.id}}">DELETE!</button>
           <hr> {{/unless}} {{/each}}
         </ul>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
   </div>
@@ -50,12 +49,11 @@
           {{#each burros}} {{#if devoured}}
           <span> {{this.id}} - {{this.burro_name}}</span>
           <button class="change-devoured" data-id="{{this.id}}" data-devoured="{{devoured}}">
-            {{#unless devoured}}EAT TIME!{{else}}Vomit it UP!{{/unless}}
+            {{#unless devoured}}EAT IT!{{else}}Vomit it Up!{{/unless}}
           </button>
           <button class="delete-burro" data-id="{{this.id}}">DELETE!</button>
           <hr> {{/if}} {{/each}}
         </ul>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
   </div>

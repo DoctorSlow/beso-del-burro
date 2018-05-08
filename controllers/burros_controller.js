@@ -7,7 +7,7 @@ var burro = require("../models/burro.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function (req, res) {
-  burro.all(function (data) {
+  burro.selectAll(function (data) {
     var hbsObject = {
       burros: data
     };
@@ -17,7 +17,7 @@ router.get("/", function (req, res) {
 });
 
 router.post("/api/burros", function (req, res) {
-  burro.create([
+  burro.insertOne([
     "burro_name", "devoured"
   ], [
     req.body.burro_name, req.body.devoured
@@ -34,7 +34,7 @@ router.put("/api/burros/:id", function (req, res) {
 
   console.log("condition", condition);
 
-  burro.update({
+  burro.updateOne({
     devoured: req.body.devoured
   }, condition, function (result) {
     if (result.changedRows == 0) {
@@ -49,7 +49,7 @@ router.put("/api/burros/:id", function (req, res) {
 router.delete("/api/burros/:id", function (req, res) {
   var condition = "id = " + req.params.id;
 
-  burro.delete(condition, function (result) {
+  burro.deleteOne(condition, function (result) {
     if (result.affectedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();

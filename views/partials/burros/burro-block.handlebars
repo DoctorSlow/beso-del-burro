@@ -1,9 +1,9 @@
 <li>
-	{{name}}
+	{{this.burro_name}}
 
-	<button class="change-devoured" data-id="{{id}}" data-newsleep="{{devoured}}">
-		{{#if devoured}}EAT TIME!{{else}}Vomit it UP!{{/if}}
+	<button class="change-devoured" data-id="{{this.id}}" data-devoured="{{devoured}}">
+		{{#unless devoured}}EAT TIME!{{else}}Vomit it UP!{{/unless}}
 	</button>
-
 	<button class="delete-burro" data-id="{{this.id}}">DELETE!</button>
+	<hr>
 </li>

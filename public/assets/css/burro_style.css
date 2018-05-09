@@ -16,11 +16,19 @@ body {
   background-image: url("/assets/img/Lipstick-Kiss.png");
   background-repeat: no-repeat;
   background-position: right;
+  padding: 32px;
 }
 
 .display-4,
-.lead {
+.lead,
+h5 {
   text-align: center;
+}
+
+.card-header {
+  background: yellow;
+  text-align: center;
+  font-weight: bold;
 }
 
 li {

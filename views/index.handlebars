@@ -1,8 +1,8 @@
 <div class="jumbotron">
   <h1 class="display-4">Beso del Burro!</h1>
-  <p class="lead">The internet's premiere burrito-eating full-stack web application. Eat, add, modify, and delete exciting burros to your
+  <p class="lead">The internet's premier burrito-eating full-stack web application. Eat, add, modify, and delete exciting burros to your
     heart's (and stomach's) content. Get kissed by a burro today!</p>
-  <h5 class="card-title">Add a Burro</h5>
+  <h4 class="card-title">Add a Burro</h4>
 
   <form class="create-form">
     <div class="form-group">
@@ -27,13 +27,13 @@
 <div class="row">
   <div class="col-sm-6">
     <div class="card">
+      <div class="card-header">Check out our tasty burros!</div>
       <div class="card-body">
-        <h5 class="card-title">Check out our tasty burros!</h5>
         <ul>
           {{#each burros}} {{#unless devoured}}
           <span> {{this.id}} - {{this.burro_name}}</span>
           <button class="change-devoured" data-id="{{this.id}}" data-devoured="{{devoured}}">
-            {{#unless devoured}}EAT It!{{else}}Vomit it Up!{{/unless}}
+            {{#unless devoured}}Eat It!{{else}}Vomit it Up!{{/unless}}
           </button>
           <button class="delete-burro" data-id="{{this.id}}">DELETE!</button>
           <hr> {{/unless}} {{/each}}
@@ -43,13 +43,13 @@
   </div>
   <div class="col-sm-6">
     <div class="card">
+      <div class="card-header">Check out which burros you've already eaten!</div>
       <div class="card-body">
-        <h5 class="card-title">Check out which burros you've already eaten!</h5>
         <ul>
           {{#each burros}} {{#if devoured}}
           <span> {{this.id}} - {{this.burro_name}}</span>
           <button class="change-devoured" data-id="{{this.id}}" data-devoured="{{devoured}}">
-            {{#unless devoured}}EAT IT!{{else}}Vomit it Up!{{/unless}}
+            {{#unless devoured}}Eat It!{{else}}Vomit It Up!{{/unless}}
           </button>
           <button class="delete-burro" data-id="{{this.id}}">DELETE!</button>
           <hr> {{/if}} {{/each}}

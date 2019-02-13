@@ -18,7 +18,7 @@ $(function () {
         // Reload the page to get the updated list
         location.reload();
       }
-    );
+      );
   });
 
   $(".create-form").on("submit", function (event) {
@@ -40,7 +40,7 @@ $(function () {
         // Reload the page to get the updated list
         location.reload();
       }
-    );
+      );
   });
 
   $(".delete-burro").on("click", function (event) {
@@ -55,6 +55,23 @@ $(function () {
         // Reload the page to get the updated list
         location.reload();
       }
-    );
+      );
   });
+
+  $(".throw-up").on("click", function (event) {
+    console.log("throw up");
+
+    // Send the PUT request.
+    $.ajax("/api/burros/" + id, {
+      type: "PUT",
+      data: newDevouredState
+    }).then(
+      function () {
+        console.log("changed devoured to", newDevoured);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+      );
+  });
+
 });

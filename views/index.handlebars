@@ -48,7 +48,7 @@
         <ul>
           {{#each burros}} {{#if devoured}}
           <span> {{this.id}} - {{this.burro_name}}</span>
-          <button class="change-devoured" data-id="{{this.id}}" data-devoured="{{devoured}}">
+          <button class="throw-up" data-id="{{this.id}}" data-devoured="{{devoured}}">
             {{#unless devoured}}Eat It!{{else}}Vomit It Up!{{/unless}}
           </button>
           <button class="delete-burro" data-id="{{this.id}}">DELETE!</button>
